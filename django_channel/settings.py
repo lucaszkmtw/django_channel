@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
-    'Channel'
+    'Channel',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +127,9 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-ASGI_APPLICATION = 'django_channel.routing.application'
+ASGI_APPLICATION = 'django_channel.asgi.application'
+
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
