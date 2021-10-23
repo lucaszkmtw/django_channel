@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% block title %}
+  {% endblock %}
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}">
+  {% block css %}
+  {% endblock %}
+</head>
+
+
+  {% block body %}
+    
+  {% endblock body %}
+
+    
+{% block content %}{% endblock %}
+
+
+{% block footer %}
+  
+{% endblock footer %}
+
+
+
+<script src="{% static 'js/jquery3.6.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% block js %}
+
+
+{% endblock %}
+<!-- Guardo el usuario en sesion y el token -->
+
+</html>
