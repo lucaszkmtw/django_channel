@@ -77,14 +77,14 @@ WSGI_APPLICATION = 'django_channel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3')
-        }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'channel',
+        'USER': 'noirat',
+        'PASSWORD': 'lucas',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -138,8 +138,6 @@ CHANNEL_LAYERS = {
         },
     },
 }
-
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
