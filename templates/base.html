@@ -16,23 +16,33 @@
 
   {% block css %}
   {% endblock %}
+  {% include "blocks/navbar.html" %}
 </head>
 
-{% block body %}
+<body class="text-center text-white">
+
+  
 
 
-{% endblock body %}
+    {% block body %}
+
+
+    {% endblock body %}
+
+
+</body>
 
 
 
-{% block footer %}
-
-{% endblock footer %}
-
+{% include "blocks/footer.html" %}
 
 
 <script src="{% static 'js/jquery3.6.1.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+
 {% block js %}
 
 
