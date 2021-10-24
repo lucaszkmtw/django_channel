@@ -18,10 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from main.views import home
+from main.views import profile
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name ="home"),
+    path('profile/', profile, name ="profile"),
+  
     path('chat/', include('Channel.urls')),
 
 

@@ -30,22 +30,34 @@
 
       </ul>
       <div class="nav-item dropdown">
+        {% if user.is_authenticated %}
         <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" role="button" id="dropdownMenuLink"
-          data-bs-toggle="dropdown" aria-expanded="false">login</a>
+          data-bs-toggle="dropdown" aria-expanded="false">logout</a>
 
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">perfil</a>
+          <a class="dropdown-item" href="#">cerrar secion</a>
+          <a class="dropdown-item" href="#">soporte</a>
         </div>
-
-      
+        {% else %}
+        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" role="button" id="dropdownMenuLink"
+        data-bs-toggle="dropdown" aria-expanded="false">login</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">iniciar secion</a>
+          <a class="dropdown-item" data-toggle="modal" data-target="#myModal" id="modal">crear usuario</a>
+        
+        </div>
+      {% endif %}
       </div>
 
-      <button type="button" style="margin: 3px;"
-      class="btn btn-primary btn-sm  pull-right">
-      <i class="fa fa-fw fa-file-text-o"></i> PERFIL
-    </button>
+     
+      
+     <a href="/profile">  <button type="button" style="margin: 3px;"
+      class="btn btn-primary btn-sm  pull-right">PERFIL</button></a>
+  
+   
     </div>
   </div>
 </nav>
+
+{% include "blocks/modal.html" %}
