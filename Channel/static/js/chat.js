@@ -11,24 +11,30 @@ const chatSocket = new WebSocket(
     + '/'
 );
 
-chatSocket.onmessage = function(e) {
+chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
     document.querySelector('#chat-log').value += (data.message + '\n');
-    console.log(data.username)
+    console.log(data.username);
+    var hola = data.message;
+
+
+    $('#mensaje').append(hola);
+
 };
 
-chatSocket.onclose = function(e) {
+chatSocket.onclose = function (e) {
     console.error('Chat socket closed unexpectedly');
+
 };
 
 document.querySelector('#chat-message-input').focus();
-document.querySelector('#chat-message-input').onkeyup = function(e) {
+document.querySelector('#chat-message-input').onkeyup = function (e) {
     if (e.keyCode === 13) {  // enter, return
         document.querySelector('#chat-message-submit').click();
     }
 };
 
-document.querySelector('#chat-message-submit').onclick = function(e) {
+document.querySelector('#chat-message-submit').onclick = function (e) {
     const messageInputDom = document.querySelector('#chat-message-input');
     const message = messageInputDom.value;
     chatSocket.send(JSON.stringify({
@@ -36,3 +42,6 @@ document.querySelector('#chat-message-submit').onclick = function(e) {
     }));
     messageInputDom.value = '';
 };
+
+
+
