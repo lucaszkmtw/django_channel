@@ -1,29 +1,32 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
   {% block title %}
   {% endblock %}
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+
   {% block css %}
   {% endblock %}
 </head>
 
+{% block body %}
 
-  {% block body %}
-    
-  {% endblock body %}
 
-    
-{% block content %}{% endblock %}
+{% endblock body %}
+
 
 
 {% block footer %}
-  
+
 {% endblock footer %}
 
 
@@ -34,6 +37,5 @@
 
 
 {% endblock %}
-<!-- Guardo el usuario en sesion y el token -->
 
 </html>
