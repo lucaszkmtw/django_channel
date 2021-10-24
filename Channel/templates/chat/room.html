@@ -1,7 +1,8 @@
-
 {% extends 'base.html' %}
 {% load static %}
-
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+{% endblock css %}
 
 {% block body %}
 
@@ -79,10 +80,10 @@
                     </div>
 
                     <div class="position-relative">
-                        <div class="chat-messages p-4" >
+                        <div class="chat-messages p-4">
 
-                            <div class="chat-message-right pb-4" id="CuerpoChat">
-                               <tbody>
+                            <div class="chat-message-right pb-4" id="chat">
+
                                 <div>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
                                         class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
@@ -90,18 +91,33 @@
                                 </div>
                                 <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
                                     <div class="font-weight-bold mb-1">You</div>
-                                   <p id="mensaje">holaaaaaa</p>
+                                    <p id="mensaje">holaaaaaa</p>
                                 </div>
-                               </tbody>
+
                             </div>
+                            <div id="chat_nuevo">
+                                <div class="chat_list active_chat" id=chat_list>
+                                    <div class="chat_people">
+                                        <div class="chat_img"> <img
+                                                src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                                        </div>
+                                        <div class="chat_ib">
+                                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span>
+                                                <p>Test, which is a new approach to have all solutions
+                                                    astrology under one roof.</p>
+                                            </h5>
 
-
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <div class="flex-grow-0 py-3 px-4 border-top">
                         <div class="input-group">
-                            <input id="chat-message-input" type="text" size="100" class="form-control" placeholder="Type your message">
+                            <input id="chat-message-input" type="text" size="100" class="form-control"
+                                placeholder="Type your message">
                             <button id="chat-message-submit" type="button" value="Send">Send</button>
                         </div>
                     </div>
@@ -113,8 +129,8 @@
 </main>
 
 <textarea id="chat-log" cols="50" rows="4"></textarea><br>
-  
-   {{ room_name|json_script:"room-name" }}
+
+{{ room_name|json_script:"room-name" }}
 
 
 
@@ -122,5 +138,5 @@
 
 {% block js %}
 <script src="{% static 'js/chat.js' %}"></script>
-  
+
 {% endblock js %}

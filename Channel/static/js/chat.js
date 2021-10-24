@@ -14,11 +14,24 @@ const chatSocket = new WebSocket(
 chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
     document.querySelector('#chat-log').value += (data.message + '\n');
-    console.log(data.username);
-    var hola = data.message;
+    var mensaje = data.message;
+    var usuario = data.username
+    var chat_nuevo =
+        '  <div class="chat_list active_chat" id=chat_list>' +
+        '  <div class="chat_people">' +
+        ' <div class="chat_img"> <img' +
+        ' src="https://ptetutorials.com/images/user-profile.png" alt="sunil">' +
+        '</div>   <div class="chat_ib">' +
+        ' <h5>' + usuario + ' <span class="chat_date">Dec 25</span>' +
+        ' <p> ' + mensaje + '  </h5>' +
+        ' </div></div></div>'
 
 
-    $('#mensaje').append(hola);
+
+    $('#chat_nuevo').append(chat_nuevo);
+
+
+
 
 };
 
