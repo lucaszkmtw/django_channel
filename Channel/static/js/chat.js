@@ -13,7 +13,7 @@ const chatSocket = new WebSocket(
 
 chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
-    document.querySelector('#chat-log').value += (data.message + '\n');
+    // document.querySelector('#chat-log').value += (data.message + '\n');
     var mensaje = data.message;
     var usuario = data.username
     var chat_nuevo =
