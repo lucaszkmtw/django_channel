@@ -14,3 +14,5 @@ def room(request, room_name):
 def chatHome(request):
 
     return render(request,'chat/chat.html')
+
+

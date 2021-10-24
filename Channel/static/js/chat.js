@@ -15,7 +15,7 @@ chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
     // document.querySelector('#chat-log').value += (data.message + '\n');
     var mensaje = data.message;
-    var usuario = data.username
+    var usuario = data.username 
     var chat_nuevo =
         '  <div class="chat_list active_chat" id=chat_list>' +
         '  <div class="chat_people">' +

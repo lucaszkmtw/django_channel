@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path("", views.chatHome, name="chathome"),
     path('<str:room_name>/', views.room, name='room'),
+    
 ]
