@@ -26,8 +26,6 @@ chatSocket.onmessage = function (e) {
         ' <p> ' + mensaje + '  </h5>' +
         ' </div></div></div>'
 
-
-
     $('#chat_nuevo').append(chat_nuevo);
 
 
@@ -37,7 +35,7 @@ chatSocket.onmessage = function (e) {
 
 chatSocket.onclose = function (e) {
     console.error('Chat socket closed unexpectedly');
-
+    console.log('adios');
 };
 
 document.querySelector('#chat-message-input').focus();
