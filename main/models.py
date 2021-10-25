@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin       
 from django.contrib.auth.models import Permission,Group
 from django.contrib.contenttypes.models import ContentType     
+from django.contrib.auth.models import AbstractUser
 
 class Rol(models.Model):
     """Model definition for Rol."""
@@ -47,3 +48,5 @@ class Rol(models.Model):
                 super().save(*args,**kwargs)
         
 
+class UserProfile(AbstractUser):
+    pass
