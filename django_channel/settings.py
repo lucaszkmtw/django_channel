@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'django_channel.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'channel',
-        'USER': 'noirat',
-        'PASSWORD': 'lucas',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }
