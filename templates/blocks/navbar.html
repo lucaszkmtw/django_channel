@@ -36,15 +36,16 @@
 
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="#">perfil</a>
-          <a class="dropdown-item" href="#">cerrar secion</a>
+          <a class="dropdown-item" href="{% url 'logout'%}">cerrar secion</a>
           <a class="dropdown-item" href="#">soporte</a>
         </div>
         {% else %}
         <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" role="button" id="dropdownMenuLink"
         data-bs-toggle="dropdown" aria-expanded="false">login</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">iniciar secion</a>
-          <a class="dropdown-item" data-toggle="modal" data-target="#myModal" id="modal">crear usuario</a>
+          <a class="dropdown-item" data-toggle="modal" data-target="#myModal" id="modal">iniciar secion</a>
+          <a class="dropdown-item" href="">crear usuario</a>
+          
         
         </div>
       {% endif %}

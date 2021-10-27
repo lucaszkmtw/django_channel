@@ -1,6 +1,8 @@
 from django.http.response import JsonResponse
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import auth
+from .models import UserProfile
 
 # Create your views here.
 
@@ -14,8 +16,19 @@ def home(request):
 def profile(request):
     return render(request, 'profile/profile.html')
 
-def nuevo_usaurio(request):
-    if request.method == 'POST':
-        pass
-    return JsonResponse
 
+def logout(request):
+    auth.logout(request)
+    return redirect('home')
+
+
+def new_session(request):
+    if request.method =='POST':
+        username = request.POST.get('usuario')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+
+    return JsonResponse

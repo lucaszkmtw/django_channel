@@ -19,14 +19,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from main.views import home
 from main.views import profile
+from main.views import logout
+from main.views import new_session
+from django.contrib.auth.views import logout_then_login
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name ="home"),
     path('profile/', profile, name ="profile"),
-  
     path('chat/', include('Channel.urls')),
+    path('logout/', logout , name="logout"),
+    path("login/", new_session, name="login")
 
 
 
